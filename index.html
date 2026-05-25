@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>韩语初学者词典</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">한</span>
+        <div>
+          <h1>韩语初学者词典</h1>
+          <p>查词、听发音、看例句，一页完成基础复习</p>
+        </div>
+      </div>
+      <div class="voice-status" id="voiceStatus">正在检测韩语语音</div>
+    </header>
+
+    <main>
+      <section class="search-panel" aria-label="词典搜索">
+        <div class="search-copy">
+          <p class="eyebrow">Beginner Korean Dictionary</p>
+          <h2>从常用词开始，积累能开口的韩语</h2>
+          <p>支持韩文、罗马音、中文释义和例句搜索。点击扬声器可朗读单词或整句例句。</p>
+        </div>
+        <img class="hero-image" src="assets/korean-study.svg" alt="韩语学习插图" />
+        <label class="search-box">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="输入 안녕하세요、你好、annyeong..." autocomplete="off" />
+        </label>
+        <div class="filters" aria-label="分类筛选">
+          <button class="filter active" type="button" data-category="全部">全部</button>
+          <button class="filter" type="button" data-category="问候">问候</button>
+          <button class="filter" type="button" data-category="生活">生活</button>
+          <button class="filter" type="button" data-category="餐饮">餐饮</button>
+          <button class="filter" type="button" data-category="交通">交通</button>
+          <button class="filter" type="button" data-category="学习">学习</button>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="study-list" aria-label="我的复习">
+          <div class="section-heading">
+            <h2>我的复习</h2>
+            <button id="clearSaved" type="button">清空</button>
+          </div>
+          <div id="savedWords" class="saved-empty">点词卡右上角加入复习</div>
+        </aside>
+
+        <section class="dictionary-area" aria-label="词条列表">
+          <div class="result-meta">
+            <strong id="resultCount">0 个词条</strong>
+            <span id="currentHint">全部分类</span>
+          </div>
+          <div id="wordGrid" class="word-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="wordCardTemplate">
+      <article class="word-card">
+        <div class="card-actions">
+          <span class="tag"></span>
+          <button class="save-button" type="button" aria-label="加入复习">☆</button>
+        </div>
+        <div class="korean-line">
+          <h3></h3>
+          <button class="speak-word" type="button" aria-label="播放单词发音">🔊</button>
+        </div>
+        <p class="roman"></p>
+        <p class="meaning"></p>
+        <div class="example">
+          <div>
+            <p class="example-ko"></p>
+            <p class="example-zh"></p>
+          </div>
+          <button class="speak-example" type="button" aria-label="播放例句发音">🔊</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

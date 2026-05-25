@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="320" viewBox="0 0 420 320" role="img" aria-labelledby="title desc">
+  <title id="title">Korean study desk illustration</title>
+  <desc id="desc">A notebook, speech bubble, headphones, and Korean characters.</desc>
+  <rect width="420" height="320" rx="24" fill="#E8F3FF"/>
+  <circle cx="340" cy="70" r="42" fill="#F6C453"/>
+  <rect x="54" y="86" width="230" height="166" rx="14" fill="#FFFFFF" stroke="#1D2433" stroke-width="5"/>
+  <path d="M84 124h154M84 158h134M84 192h154" stroke="#94A3B8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M54 116h230" stroke="#1D2433" stroke-width="5"/>
+  <rect x="258" y="136" width="96" height="74" rx="16" fill="#1F8A70" stroke="#1D2433" stroke-width="5"/>
+  <path d="M296 210l-20 32 50-32" fill="#1F8A70" stroke="#1D2433" stroke-width="5" stroke-linejoin="round"/>
+  <text x="306" y="185" text-anchor="middle" font-size="42" font-weight="800" font-family="Malgun Gothic, Arial, sans-serif" fill="#FFFFFF">한</text>
+  <path d="M108 83c0-30 25-54 58-54s58 24 58 54" fill="none" stroke="#2563EB" stroke-width="15" stroke-linecap="round"/>
+  <rect x="78" y="74" width="40" height="72" rx="18" fill="#2563EB" stroke="#1D2433" stroke-width="5"/>
+  <rect x="214" y="74" width="40" height="72" rx="18" fill="#2563EB" stroke="#1D2433" stroke-width="5"/>
+  <path d="M121 254h220" stroke="#1D2433" stroke-width="6" stroke-linecap="round"/>
+  <path d="M309 93l18 18 36-42" fill="none" stroke="#D84444" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
