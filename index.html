@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>韩语初学者词典</title>
+    <title>韩语翻译与发音助手</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,32 +11,34 @@
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">한</span>
         <div>
-          <h1>韩语初学者词典</h1>
-          <p>查词、听发音、看例句，一页完成基础复习</p>
+          <h1>韩语翻译与发音助手</h1>
+          <p>输入韩文单词或句子，查看中文意思、例句并朗读发音</p>
         </div>
       </div>
       <div class="voice-status" id="voiceStatus">正在检测韩语语音</div>
     </header>
 
     <main>
-      <section class="search-panel" aria-label="词典搜索">
-        <div class="search-copy">
-          <p class="eyebrow">Beginner Korean Dictionary</p>
-          <h2>从常用词开始，积累能开口的韩语</h2>
-          <p>支持韩文、罗马音、中文释义和例句搜索。点击扬声器可朗读单词或整句例句。</p>
+      <section class="translator-panel" aria-label="韩语翻译器">
+        <div class="translator-copy">
+          <p class="eyebrow">Korean Translator</p>
+          <h2>输入韩文，马上翻译并听发音</h2>
+          <p>适合韩语初学者练习常见词汇和基础句子。离线内置常用词库，无需登录。</p>
         </div>
         <img class="hero-image" src="assets/korean-study.svg" alt="韩语学习插图" />
-        <label class="search-box">
-          <span>搜索</span>
-          <input id="searchInput" type="search" placeholder="输入 안녕하세요、你好、annyeong..." autocomplete="off" />
-        </label>
-        <div class="filters" aria-label="分类筛选">
-          <button class="filter active" type="button" data-category="全部">全部</button>
-          <button class="filter" type="button" data-category="问候">问候</button>
-          <button class="filter" type="button" data-category="生活">生活</button>
-          <button class="filter" type="button" data-category="餐饮">餐饮</button>
-          <button class="filter" type="button" data-category="交通">交通</button>
-          <button class="filter" type="button" data-category="学习">学习</button>
+
+        <div class="translator-box">
+          <label for="translateInput">韩文输入</label>
+          <textarea id="translateInput" rows="4" placeholder="例如：안녕하세요 / 화장실이 어디예요? / 물 한 잔 주세요."></textarea>
+          <div class="translator-actions">
+            <button id="translateButton" class="primary-button" type="button">翻译</button>
+            <button id="speakInputButton" class="icon-button" type="button" aria-label="朗读输入内容">🔊</button>
+            <button id="clearTranslateButton" class="ghost-button" type="button">清空</button>
+          </div>
+        </div>
+
+        <div class="translation-result" id="translationResult" aria-live="polite">
+          <div class="empty-state">输入韩语后点击“翻译”，这里会显示中文意思、逐词拆解和例句。</div>
         </div>
       </section>
 
@@ -49,7 +51,22 @@
           <div id="savedWords" class="saved-empty">点词卡右上角加入复习</div>
         </aside>
 
-        <section class="dictionary-area" aria-label="词条列表">
+        <section class="dictionary-area" aria-label="词典列表">
+          <div class="dictionary-tools">
+            <label class="search-box">
+              <span>搜索</span>
+              <input id="searchInput" type="search" placeholder="输入 안녕하세요、你好、annyeong..." autocomplete="off" />
+            </label>
+            <div class="filters" aria-label="分类筛选">
+              <button class="filter active" type="button" data-category="全部">全部</button>
+              <button class="filter" type="button" data-category="问候">问候</button>
+              <button class="filter" type="button" data-category="生活">生活</button>
+              <button class="filter" type="button" data-category="餐饮">餐饮</button>
+              <button class="filter" type="button" data-category="交通">交通</button>
+              <button class="filter" type="button" data-category="学习">学习</button>
+            </div>
+          </div>
+
           <div class="result-meta">
             <strong id="resultCount">0 个词条</strong>
             <span id="currentHint">全部分类</span>
@@ -67,7 +84,7 @@
         </div>
         <div class="korean-line">
           <h3></h3>
-          <button class="speak-word" type="button" aria-label="播放单词发音">🔊</button>
+          <button class="speak-word icon-button" type="button" aria-label="播放单词发音">🔊</button>
         </div>
         <p class="roman"></p>
         <p class="meaning"></p>
@@ -76,7 +93,7 @@
             <p class="example-ko"></p>
             <p class="example-zh"></p>
           </div>
-          <button class="speak-example" type="button" aria-label="播放例句发音">🔊</button>
+          <button class="speak-example icon-button" type="button" aria-label="播放例句发音">🔊</button>
         </div>
       </article>
     </template>

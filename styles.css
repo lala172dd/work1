@@ -26,7 +26,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -79,7 +80,7 @@ h1 {
 
 .brand p,
 .voice-status,
-.search-copy p,
+.translator-copy p,
 .result-meta,
 .roman,
 .example-zh,
@@ -101,7 +102,7 @@ main {
   margin: 28px auto 56px;
 }
 
-.search-panel {
+.translator-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 220px;
   gap: 22px;
@@ -121,14 +122,14 @@ main {
   text-transform: uppercase;
 }
 
-.search-copy h2 {
+.translator-copy h2 {
   max-width: 680px;
   margin-bottom: 10px;
   font-size: clamp(26px, 4vw, 44px);
   line-height: 1.12;
 }
 
-.search-copy p:last-child {
+.translator-copy p:last-child {
   max-width: 680px;
   line-height: 1.7;
 }
@@ -137,6 +138,143 @@ main {
   width: 100%;
   max-width: 220px;
   justify-self: end;
+}
+
+.translator-box,
+.translation-result,
+.dictionary-tools {
+  grid-column: 1 / -1;
+}
+
+.translator-box {
+  display: grid;
+  gap: 10px;
+}
+
+.translator-box label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.translator-box textarea {
+  width: 100%;
+  min-height: 118px;
+  resize: vertical;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  outline: 0;
+  padding: 14px 16px;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Malgun Gothic", "Noto Sans KR", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.translator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primary-button,
+.ghost-button {
+  min-height: 42px;
+  border-radius: 8px;
+  padding: 0 18px;
+}
+
+.primary-button {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: #fff;
+  font-weight: 800;
+}
+
+.ghost-button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+}
+
+.translation-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.translation-head,
+.matched-example {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.translation-head span {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.translation-source {
+  color: var(--muted);
+  font-family: "Malgun Gothic", "Noto Sans KR", sans-serif;
+  font-size: 20px;
+}
+
+.translation-card h3 {
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.token-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.token {
+  display: grid;
+  gap: 3px;
+  max-width: 220px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.token strong {
+  font-family: "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
+
+.token small {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.unknown-token {
+  background: #fff8e8;
+}
+
+.matched-example {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.matched-example strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dictionary-tools {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .search-box {
@@ -179,7 +317,8 @@ main {
 .section-heading button,
 .save-button,
 .speak-word,
-.speak-example {
+.speak-example,
+.icon-button {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
@@ -300,7 +439,8 @@ main {
 
 .save-button,
 .speak-word,
-.speak-example {
+.speak-example,
+.icon-button {
   display: grid;
   width: 38px;
   height: 38px;
@@ -360,7 +500,7 @@ main {
 @media (max-width: 860px) {
   .topbar,
   .layout,
-  .search-panel {
+  .translator-panel {
     display: block;
   }
 
@@ -376,7 +516,9 @@ main {
 
   .search-box,
   .filters,
-  .layout {
+  .layout,
+  .translator-box,
+  .translation-result {
     margin-top: 18px;
   }
 
@@ -397,13 +539,13 @@ main {
   }
 
   .topbar,
-  .search-panel,
+  .translator-panel,
   .dictionary-area,
   .study-list {
     padding: 14px;
   }
 
-  .search-copy h2 {
+  .translator-copy h2 {
     font-size: 26px;
   }
 
